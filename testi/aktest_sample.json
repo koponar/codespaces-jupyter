@@ -1,0 +1,31 @@
+{
+  "name" : "aktest_sample",
+  "description" : "",
+  "role" : "arn:aws:iam::194541915973:role/AWSGlueServiceRole",
+  "executionProperty" : {
+    "maxConcurrentRuns" : 1
+  },
+  "command" : {
+    "name" : "glueetl",
+    "scriptLocation" : "s3://aktest-194541915973/skriptit/my_etl_script.py",
+    "pythonVersion" : "3"
+  },
+  "defaultArguments" : {
+    "--enable-job-insights" : "true",
+    "--job-language" : "python"
+  },
+  "maxRetries" : 0,
+  "allocatedCapacity" : 10,
+  "timeout" : 2880,
+  "maxCapacity" : 10.0,
+  "glueVersion" : "4.0",
+  "numberOfWorkers" : 10,
+  "workerType" : "G.1X",
+  "executionClass" : "STANDARD",
+  "sourceControlDetails" : {
+    "provider" : "GITHUB",
+    "repository" : "codespaces-jupyter",
+    "branch" : "main",
+    "folder" : "testi"
+  }
+}
